@@ -1,6 +1,6 @@
 <div class="container my-5">
     <h1 class="mb-3">Канали</h1>
-
+    <input class="form-control" placeholder="🔍Пошук..." [(ngModel)]="searchCriteria"/>
     <table class="table" *ngIf="channels && channels.length > 0">
         <thead>
             <tr>
@@ -13,15 +13,14 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let channel of channels">
+            <tr *ngFor="let channel of channels | channelFilter:searchCriteria">
                 <td>{{ channel.id  }}</td>
                 <td>{{ channel.name  }}</td>
                 <td>{{ channel.subscribersNumber  }}</td>
                 <td>{{ channel.prorussianCoef  }}</td>
                 <td><a [routerLink]="['/channels', channel.id]">Переглянути</a></td>
-
             </tr>
         </tbody>
     </table>
-    <p *ngIf="!channels || channels.length <= 0">Не знайдено каналів/p>
+    <p *ngIf="!channels || (channels|channelFilter:searchCriteria).length <= 0">Не знайдено каналів</p>
 </div>
