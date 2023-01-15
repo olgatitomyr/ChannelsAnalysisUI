@@ -13,7 +13,7 @@
         <tr *ngFor="let channel of channels | channelFilter:searchCriteria">
             <td>{{ channel.channelName  }}</td>
             <td>{{ channel.prorussianCoefficient.calculatedCoefficient  }}</td>
-            <td><a [routerLink]="['/channels', channel.id]">Переглянути</a></td>
+            <td><a [routerLink]="['/channels', channel.id]">Переглянути статистику</a></td>
         </tr>
     </tbody>
 </table>
