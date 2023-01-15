@@ -31,7 +31,17 @@ export class ViewChannelComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.channelsService.getChannel(params['id']).subscribe(
-        c => this.channel = c)
+        c => {
+          this.channel = c
+          this.channel.statistics.reactions = this.unicodeToChar(this.channel.statistics.reactions);
+        })
     });
+  }
+  
+  private unicodeToChar(text: string) {
+    return text.replace(/\\\\u[\dA-Fa-f]{8}/gi, 
+      function (match) {
+          return String.fromCodePoint(parseInt(match.replace(/\\\\u/gi, ''), 16));
+      });
   }
 }
