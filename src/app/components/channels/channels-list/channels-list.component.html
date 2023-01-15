@@ -1,26 +1,23 @@
-<div class="container my-5">
-    <h1 class="mb-3">Канали</h1>
-    <input class="form-control" placeholder="🔍Пошук..." [(ngModel)]="searchCriteria"/>
-    <table class="table" *ngIf="channels && channels.length > 0">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Назва</th>
-                <th>Кількість підписників</th>
-                <th>Коефіцієнт проросійськості</th>
-                <th> </th>
-            </tr>
-        </thead>
+<h1 class="mb-3">Канали</h1>
+<input class="form-control" placeholder="🔍Пошук..." [(ngModel)]="searchCriteria"/>
+<table class="table" *ngIf="channels && channels.length > 0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Назва</th>
+            <th>Коефіцієнт проросійськості</th>
+            <th> </th>
+        </tr>
+    </thead>
 
-        <tbody>
-            <tr *ngFor="let channel of channels | channelFilter:searchCriteria">
-                <td>{{ channel.id  }}</td>
-                <td>{{ channel.name  }}</td>
-                <td>{{ channel.subscribersNumber  }}</td>
-                <td>{{ channel.prorussianCoef  }}</td>
-                <td><a [routerLink]="['/channels', channel.id]">Переглянути</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <p *ngIf="!channels || (channels|channelFilter:searchCriteria).length <= 0">Не знайдено каналів</p>
-</div>
+    <tbody>
+        <tr *ngFor="let channel of channels | channelFilter:searchCriteria">
+            <td>{{ channel.channelId  }}</td>
+            <td>{{ channel.channelName  }}</td>
+            <td>{{ channel.prorussianCoefficient.calculatedCoefficient  }}</td>
+            <td><a [routerLink]="['/channels', channel.channelId]">Переглянути</a></td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!channels || (channels|channelFilter:searchCriteria).length <= 0">Не знайдено каналів. Ви можете створити запит на додавання каналу на сторінці 
+    <a [routerLink]="'/channels/add'">'Додати Канал'</a></p>

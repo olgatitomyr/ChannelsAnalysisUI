@@ -1,0 +1,13 @@
+<h3>Запит на додавання каналу</h3>
+<p>На цій сторінці Ви можете створити запит на аналіз проросійськості Telegram каналу </p>
+<div class="row">
+    <div class="col-sm-2 d-flex justify-content-end">
+        <label for="channelName">Назва каналу:</label>
+    </div>
+    <div class="col-sm-4">
+        <div class="input-group">
+            <input id="channelName" type="text" class="form-control" [(ngModel)]="channelName">
+            <button class="btn btn-outline-secondary" type="button" (click)="addChannel()">Додати</button>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,9 @@
+import { ChannelStatistics } from "./channel-statistics.model";
+import { ProrussianCoefficient } from "./prorussian_coefficient.model";
+
 export interface Channel {
-    id: string;
-    name: string;
-    subscribersNumber: number;
-    prorussianCoef: number;
+    channelId: string;
+    channelName: string;
+    statistics: ChannelStatistics;
+    prorussianCoefficient: ProrussianCoefficient;
 }

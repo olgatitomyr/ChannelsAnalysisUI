@@ -8,6 +8,8 @@ import { ChannelsListComponent } from './components/channels/channels-list/chann
 import { InfoComponent } from './components/info/info.component';
 import { ViewChannelComponent } from './components/view-channel/view-channel.component';
 import { ChannelFilterPipe } from './pipes/channel-filter.pipe';
+import { AddChannelComponent } from './components/add-channel/add-channel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ChannelFilterPipe } from './pipes/channel-filter.pipe';
     ChannelsListComponent,
     InfoComponent,
     ViewChannelComponent,
-    ChannelFilterPipe
+    ChannelFilterPipe,
+    AddChannelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
