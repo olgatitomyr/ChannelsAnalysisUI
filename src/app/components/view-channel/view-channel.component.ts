@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class ViewChannelComponent implements OnInit {
 
   channel: Channel = {
-    channelId: '',
+    id: '',
     channelName: '',
     statistics: {
       channelId: '',
