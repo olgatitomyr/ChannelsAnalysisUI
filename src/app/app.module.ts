@@ -10,6 +10,7 @@ import { ViewChannelComponent } from './components/view-channel/view-channel.com
 import { ChannelFilterPipe } from './pipes/channel-filter.pipe';
 import { AddChannelComponent } from './components/add-channel/add-channel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

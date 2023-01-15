@@ -5,3 +5,11 @@
 <p>Реакції: {{channel.statistics.reactions}}</p>
 <p>Дата останньої публікації: {{channel.statistics.lastPublicationDate}}</p>
 <p>Графіки</p>
+<div class="col-md-5">
+    <canvas baseChart class="chart"
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [type]="barChartType">
+    </canvas>
+</div>
