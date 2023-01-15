@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddChannelComponent } from './components/add-channel/add-channel.component';
 import { ChannelsListComponent } from './components/channels/channels-list/channels-list.component';
 import { InfoComponent } from './components/info/info.component';
 import { ViewChannelComponent } from './components/view-channel/view-channel.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'info',
     component: InfoComponent
+  },
+  {
+    path: 'channels/add',
+    component: AddChannelComponent
   },
   {
     path: 'channels/:id',

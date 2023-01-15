@@ -8,6 +8,6 @@ import { Channel } from '../models/channel.model';
 @Pipe({name: 'channelFilter'})
 export class ChannelFilterPipe implements PipeTransform {
   transform(value: Channel[], searchCriteria = ''): Channel[] {
-    return value.filter(c => c.name.toUpperCase().includes(searchCriteria.toUpperCase()));
+    return value.filter(c => c.channelName.toUpperCase().includes(searchCriteria.toUpperCase()));
   }
 }
