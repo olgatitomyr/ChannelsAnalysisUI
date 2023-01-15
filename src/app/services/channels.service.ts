@@ -11,7 +11,7 @@ export class ChannelsService {
 private baseUrl: string = 'https://localhost:7081/api/channels/';
   channels: Channel[] = [
     {
-      channelId: '0001',
+      id: '0001',
       channelName: 'AAA',
       prorussianCoefficient: {
         channelId: '0001',
@@ -26,7 +26,7 @@ private baseUrl: string = 'https://localhost:7081/api/channels/';
       }
     },
     {
-      channelId: '0002',
+      id: '0002',
       channelName: 'BBB',
       prorussianCoefficient: {
         channelId: '0002',
@@ -41,7 +41,7 @@ private baseUrl: string = 'https://localhost:7081/api/channels/';
       }
     },
     {
-      channelId: '0003',
+      id: '0003',
       channelName: 'CCC',
       prorussianCoefficient: {
         channelId: '0003',

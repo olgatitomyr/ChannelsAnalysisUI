@@ -3,7 +3,6 @@
 <table class="table" *ngIf="channels && channels.length > 0">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Назва</th>
             <th>Коефіцієнт проросійськості</th>
             <th> </th>
@@ -12,10 +11,9 @@
 
     <tbody>
         <tr *ngFor="let channel of channels | channelFilter:searchCriteria">
-            <td>{{ channel.channelId  }}</td>
             <td>{{ channel.channelName  }}</td>
             <td>{{ channel.prorussianCoefficient.calculatedCoefficient  }}</td>
-            <td><a [routerLink]="['/channels', channel.channelId]">Переглянути</a></td>
+            <td><a [routerLink]="['/channels', channel.id]">Переглянути</a></td>
         </tr>
     </tbody>
 </table>
