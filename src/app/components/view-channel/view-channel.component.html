@@ -2,10 +2,9 @@
 <p>Коефіцієнт проросійськості: {{channel.prorussianCoefficient.calculatedCoefficient}}</p>
 <p>Кількість переглядів: {{channel.statistics.viewsTotalCount}}</p>
 <p>Кількість поширень: {{channel.statistics.forwardsTotalCount}}</p>
-<p>Реакції: {{channel.statistics.reactions}}</p>
 <p>Дата останньої публікації: {{channel.statistics.lastPublicationDate}}</p>
-<p>Графіки</p>
-<div class="col-md-5">
+<p>Реакції: {{channel.statistics.reactions}}</p>
+<div class="col-sm-10 col-lg-5">
     <canvas baseChart class="chart"
             [data]="barChartData"
             [options]="barChartOptions"

@@ -83,6 +83,7 @@ export class ViewChannelComponent implements OnInit {
         const value: any = e[1];
         return parseInt((value?.toString() || ''));
       });
+      this.chart?.update();
     } catch {}
   }
 }
