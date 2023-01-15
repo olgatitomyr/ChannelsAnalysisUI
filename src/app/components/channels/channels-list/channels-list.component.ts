@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Channel } from 'src/app/models/channel.model';
 import { ChannelsService } from 'src/app/services/channels.service';
 
@@ -9,6 +9,8 @@ import { ChannelsService } from 'src/app/services/channels.service';
 })
 export class ChannelsListComponent implements OnInit {
   channels: Channel[] = [];
+  @Input()
+  searchCriteria: string = '';
   
   constructor(private channelsService: ChannelsService) {
    }
