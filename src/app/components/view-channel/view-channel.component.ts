@@ -78,6 +78,7 @@ export class ViewChannelComponent implements OnInit {
   private prepareChartData() {
     try {
       let reactionInfo = JSON.parse(this.channel.statistics.reactions);
+      this.channel.prorussianCoefficient.calculatedCoefficient = 1 - this.channel.prorussianCoefficient.calculatedCoefficient;
       this.barChartData.labels = Object.entries(reactionInfo).map(e => e[0]);
       this.barChartData.datasets[0].data = Object.entries(reactionInfo).map(e => {
         const value: any = e[1];

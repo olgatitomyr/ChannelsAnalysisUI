@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Channel } from 'src/app/models/channel.model';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChannelsService {
-private baseUrl: string = 'https://localhost:7081/api/channels/';
+private baseUrl: string = environment.apiEndpoint + 'channels/';
   channels: Channel[] = [
     {
       id: '0001',
@@ -72,9 +72,12 @@ private baseUrl: string = 'https://localhost:7081/api/channels/';
     //return this.channels.filter(c => c.channelId == id)[0];
   }
 
-  addChannel(name: string): Observable<string>
+  addChannel(channelLink: string): Observable<string>
   {
-    return this.http.post<string>(this.baseUrl, name);
+    return this.http.post<string>(this.baseUrl, `"${channelLink}"`, 
+    { headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })});
   }
 
 }

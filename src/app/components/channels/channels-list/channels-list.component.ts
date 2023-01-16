@@ -17,7 +17,10 @@ export class ChannelsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.channelsService.getChannels().subscribe(
-      c => this.channels = c
+      c => {
+        this.channels = c;
+        this.channels.forEach(c => c.prorussianCoefficient.calculatedCoefficient = 1 - c.prorussianCoefficient.calculatedCoefficient);
+      }
     );
   }
 

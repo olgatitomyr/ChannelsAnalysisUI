@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.text-yellow {
+    color: #ffde34;
+}
+.text-orange {
+    color: orange;
+}
+.text-dark-green {
+    color: rgb(1, 110, 1);
+}
+.text-light-green {
+    color: lightgreen;
+}

@@ -1,9 +1,13 @@
-<p>{{channel.channelName}}</p>
-<p>Коефіцієнт проросійськості: {{channel.prorussianCoefficient.calculatedCoefficient}}</p>
+<h1>{{channel.channelName}}</h1>
+<h5 [ngClass]="{'text-dark-green': channel.prorussianCoefficient.calculatedCoefficient < 0.24, 
+    'text-light-green' : channel.prorussianCoefficient.calculatedCoefficient > 0.24 && channel.prorussianCoefficient.calculatedCoefficient < 0.50,
+    'text-yellow' : channel.prorussianCoefficient.calculatedCoefficient >= 0.50 && channel.prorussianCoefficient.calculatedCoefficient < 0.75,
+    'text-danger' : channel.prorussianCoefficient.calculatedCoefficient >= 0.75}">
+    Коефіцієнт проросійськості: {{channel.prorussianCoefficient.calculatedCoefficient | percent}}</h5>
+<p>Статистика за останні 10 постів:</p>
 <p>Кількість переглядів: {{channel.statistics.viewsTotalCount}}</p>
 <p>Кількість поширень: {{channel.statistics.forwardsTotalCount}}</p>
-<p>Дата останньої публікації: {{channel.statistics.lastPublicationDate}}</p>
-<p>Реакції: {{channel.statistics.reactions}}</p>
+<p>Дата останньої публікації: {{channel.statistics.lastPublicationDate | date : 'mediumDate'}}</p>
 <div class="col-sm-10 col-lg-5">
     <canvas baseChart class="chart"
             [data]="barChartData"
