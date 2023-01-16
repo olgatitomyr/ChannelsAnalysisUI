@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChannelsService {
-private baseUrl: string = 'https://localhost:7081/api/channels/';
+private baseUrl: string = environment.apiEndpoint + 'channels/';
   channels: Channel[] = [
     {
       id: '0001',
