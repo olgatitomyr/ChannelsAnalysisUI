@@ -16,6 +16,6 @@ export class AddChannelComponent implements OnInit {
 
   addChannel(): void {
     this.channelsService.addChannel(this.channelName).subscribe(
-      () => alert(`Запит на додавання каналу "${this.channelName}" створено`));
+      () => alert(`Запит на додавання каналу "${this.channelName}" створено. Обробка запиту триватиме до однієї хвилини`));
   }
 }
